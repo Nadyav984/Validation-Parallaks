@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Domine" rel="stylesheet">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <!--SECTION1-->
+    <div class="content">
+        <header> 
+                
+                <div id="languages">
+                    <label>
+                        <input type="radio" name="lang" id="ua" value="UA">UA
+                    </label>
+                    <label>
+                        <input type="radio" name="lang" id="ru" value="RU">RU
+                    </label>
+                    <label>
+                        <input type="radio" name="lang" id="eng" value="ENG">ENG
+                    </label>
+                    <button id="save">Save  <i class="fa fa-floppy-o" aria-hidden="true"></i></button>
+                </div>
+        
+                <div id="welcome-message">
+                    <span class="lang lang-ua">Привіт</span>
+                    <span class="lang lang-ru">Привет</span>
+                    <span class="lang lang-eng">Hello</span>
+                    <span id="username">, username!</span>
+        
+                    <span class="lang lang-ua">Раді тебе бачити!</span>
+                    <span class="lang lang-ru">Рады тебя видеть!</span>
+                    <span class="lang lang-eng">Glad to see you!</span>
+                </div>
+            
+        </header>
+
+        <div class="parallax">
+            <div class="sirkle">
+                <font> 5</font>
+                <br>
+                DOM&BOM
+                <br>
+                Vasylyshyn Nadia
+            </div>
+        </div>
+
+        <div class="conteiner"> 
+            <div class="sirkle cnt">VALIDATION FORMS</div>
+            <div class="registration">
+                <h3>Registration Form</h3>
+                <form name="login" id="registrationform" novalidate="true" >
+                   <div> User name:
+                        <input type="text" name="username" id="username" pattern="^[a-zA-Z]+$" placeholder="Enter your user name"></div>
+                   <div> Password:
+                        <input type="text" name="password" id="password" pattern=".{8,}" title="Six or more characters" placeholder="Enter your password"></div>  
+                    <div> Age:
+                        <input type="text" name="age" id="age" size="20" pattern="[0-9]{1,}" placeholder="Enter your age..."> </div>   
+                    <div> Email:
+                        <input type="text" name="email" id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" placeholder="Enter your email"> </div>        
+                    <div> Date:
+                        <input type="text" name="date" id="date" placeholder="Enter date (dd/mm/yy)"> </div>            
+                    <div class="errors"></div>     
+                    <div>
+        <input type="submit" id="btn" value="Validate Me"></div>
+                    </form>
+                    
+           </div>
+           
+        </div>
+        <div class="conteiner cnt2">  
+            <div class="OSname" data-version="macos">
+                Your OS is MacOS.
+            </div>
+        
+            <div class="OSname" data-version="windows">
+                Your OS is Windows.
+            </div>
+        
+            <div class="OSname" data-version="linux">
+                Your OS is Linux.
+            </div>
+        </div>  
+        <div class="parallax prlx1">
+            <div class="under-parallax">
+                Scroll Up and Down this page to see the parallax scrolling effect.
+                This div is just here to enable scrolling.
+            </div>
+        </div>
+        <div class="conteiner"> 
+            <div class="sirkle registr"> REGISTRATION FORMS</div>
+            <div class="registration employee">
+                <ul class="employeeList">
+                    <li>
+                      <span class="employeeFirstName">John</span>
+                      <span class="employeeLastName">Doe</span>
+                      <span class="employeeSalary">$ 1000</span>
+                      <span class="employeePosition">Manager</span>
+                    </li>
+                  </ul>
+         <button class="addEmployee">Add New emplyee</button>
+             
+        </div>
+        <div class="parallax prlx2">
+            
+        </div>
+        <div class="conteiner cnt3"> 
+        <div class="eyes">
+            <div class="eye1">
+                <div id="box1" class="box">
+                        <div id="box2" class="box">
+                                <div id="box3" class="box">
+                                    <div id="box4" class="box">
+                              onClick
+                          </div>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+        <div class="eye2">    
+                <div id="box1" class="box">
+                        <div id="box2" class="box">
+                                <div id="box3" class="box">
+                                    <div id="box4" class="box">
+                              onClick
+                          </div>
+                        </div>
+                    </div>
+                </div>  
+        </div>
+    </div>
+        <div id="color-change">
+                Push on eye and change color of eyes. 
+        </div>
+  </div>  
+  <footer>
+
+  </footer>
+</body>
+</html>
+<script type="text/javascript" src="js/script.js"></script>
+<script type="text/javascript" src="js/script-2.js"></script>
+<script type="text/javascript" src="js/script-3.js"></script>
+<script type="text/javascript" src="js/script-4.js"></script>
