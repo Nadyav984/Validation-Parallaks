@@ -18,7 +18,11 @@ function validate(e){
 }
 
 window.onload = function() {
-	document.getElementById("registrationform").addEventListener("submit", validate);
+  document.getElementById("registrationform").addEventListener("submit", validate);
+  document.getElementById("username").oninput = (e) => {
+    console.log(e);
+    document.getElementById('username1').textContent = document.getElementById("username").value
+  }
 }
 
 function checkUser(userName='') {
