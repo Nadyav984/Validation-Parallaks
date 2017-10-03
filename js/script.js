@@ -1,6 +1,7 @@
 function validate(e){
     e.preventDefault();
     let userName = document.getElementById("username").value;
+    console.log(userName);
     let password = document.getElementById("password").value;
     let userAge = document.getElementById("age").value;
     let userEmail = document.getElementById("email").value;
@@ -20,25 +21,19 @@ window.onload = function() {
 	document.getElementById("registrationform").addEventListener("submit", validate);
 }
 
-function checkUser() {
-  checkUserEntering=document.getElementById("username").value;
-    userStart="user_";
-    userEnter=checkUserEntering[0]+checkUserEntering[1]+checkUserEntering[2]+checkUserEntering[3]+
-    checkUserEntering[4];
-
-    if (checkUserEntering==="") {
+function checkUser(userName='') {
+  var re = /^user_(\w+)/g;
+  console.log(!!userName.match(re));
+    if (userName==="") {
       document.getElementById("username").style.border = "1px solid red";
-      alert("You entered NOTHING in Username placeholder.You should enter a valid username starts with user_");
+      alert("You should enter a valid username starts with user_");
         return false;
-    }
-    else if((!(~checkUserEntering.substr(5).indexOf(" ")) && ((userEnter)===userStart)) 
-      && (checkUserEntering.substr(5)!=="")) {
+    } else if(userName.match(re)){
       document.getElementById("username").style.border = "1px solid black";
-    return true;
-    }
-    else {
+       return true;
+    } else {
         document.getElementById("username").style.border = "1px solid red";
-      alert("You entered INVALID USER NAME: "+checkUserEntering+". Enter a valid username without SPACES starts with user_ + your username ");
+      alert("You entered INVALID USER NAME: "+userName+". Enter a valid username without SPACES starts with user_ + your username ");
         return false;
     }
 }
@@ -48,8 +43,8 @@ function checkPassword(){
   if (checkUserEntering==="") {
     document.getElementById("password").style.border = "1px solid red";
     alert("Pleas, enter your password");
-      return false;
-}
+      return false; 
+  }
 }
 function checkAge(){
   checkAgeEntering=document.getElementById("age").value;
@@ -123,20 +118,5 @@ function checkDate() {
   }
 }
 
-function checkInputs() {
-  userch=checkUser();
-  passwch=checkPassword();
-	agech=checkAge();
-  emailch=checkEmail();
-	datech=checkDate();
-
-	if((userch) && (passwch) && (agech) && (emailch) && (datech)) {
-		alert("Congratulations! Form validated sucessfully!!");
-		return true;
-	}
-	else {
-        return false;
-    }
-}
 
 /*--------------------------------------------------------------------------------------------------------*/
