@@ -1,14 +1,23 @@
-var onClick = function (e) {
+var onClickPrev = function (e) {
 	var $el = e.target;
-  
-  e.stopPropagation();
-	
-  $el.style.backgroundColor = 'yellow';
-	alert('CLICK!');
-    $el.style.backgroundColor = '';
+   $el.style.backgroundColor = 'yellow';
+   alert('CLICK')
 }
 
-document.body.onclick = onClick;
-box1.onclick = onClick;
-box2.onclick = onClick;
-box3.onclick = onClick;
+
+var onClickStop = function (e) {
+	var $el = e.target;
+   e.stopPropagation()
+   $el.style.backgroundColor = 'yellow';
+   alert('CLICK')
+}
+
+box1.onclick = onClickPrev;
+box2.onclick = onClickPrev;
+box3.onclick = onClickPrev;
+box4.onclick = onClickPrev;
+
+box5.onclick = onClickStop;
+box6.onclick = onClickStop;
+box7.onclick = onClickStop;
+box8.onclick = onClickStop;

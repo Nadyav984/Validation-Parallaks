@@ -56,11 +56,6 @@ header{
     color: black;
     padding-top: 15px;
 }
-.registration.employee{
-   width: 45%;
-   height: 90%;
-   left: 600px;
-}
 
 h3 {
 	font-size: 40px;
@@ -237,14 +232,83 @@ td#Terms{
     text-shadow: 0 5 2px #030303;
 }
 /*-------------------------------------------------------------------------------------------------*/
-.employeeList{
-    display: inline-block;
-    font-size: 30px;
-    margin: 20px;
-    padding: 10px;
-    background: #C0C0C0;
-   
+.registration.employee{
+    width: 45%;
+    height: 90%;
+    left: 640px;
+ }
+ 
+#employeeList{
+    margin: 20px 0px;
 
+    background-image:url(img/00.png);
+}
+
+ul{
+    font-size: 24px;
+    font-weight: bolder;
+    padding: 5px;
+    height: 80%;
+}
+
+li{
+    list-style-type: none;
+    background: rgba(247, 177, 0, 0.5);
+    border-radius: 10px;
+    border:1px solid #000000;
+    margin-bottom: 5px;
+    padding: 10px 0;
+    display: inline;
+    top: 5px;
+    left: 2px;
+    align-items: center;
+    flex-flow: row nowrap;
+    position: relative;
+}
+li span{
+    padding: 5px 20px;
+}
+#employeeList .employeeLastName {
+	width: 20%;
+}
+
+#employeeList .employeeSalary {
+	width: 20%;
+}
+
+#employeeList .employeePosition {
+	width: 22%;
+}
+
+#employeeList .employeeDelete, #delete{
+	color:#fff;
+	font-size: 14px;
+	padding: 4px 7px 4px 6px;
+	-webkit-transition: all 1.2s ease;
+	transition: all 1.2s ease;
+}
+
+#employeeList .employeeDelete:hover, #delete:hover{
+	background: rgba(244, 1, 1, 0.7);
+	border-radius: 100%;
+	-webkit-transition: all 1.2s ease;
+	transition: all 1.2s ease;
+}
+
+#inSystem, #averageSalary, #setLimit {
+	font-size: 24px;
+	font-family: 'Josefin Slab', serif;
+	margin:5px 0 0;
+}
+
+.employeeUserIcon {
+	background: url("../img/usericon.png") no-repeat ;
+	background-size: contain;
+	width: 40px;
+	height: 40px;
+	position: relative;
+	top:12px;
+	left:20px;
 }
 
 /*-------------------------------------------------------------------------------------------------*/
@@ -375,9 +439,42 @@ button#save:hover {
     width: 120px; height: 120px;
     border-radius: 70%;
     margin: 56px;
-
-
+    text-align: center;
+    font-weight: bolder;
+    font-size: 24px;
   }
+
+#box5{
+    background: #050505;
+    width: 300px; height: 300px;
+    border-radius: 70%;
+    padding: 5px;
+}
+
+#box6 {
+    background: #FFFFFE;
+    width: 270px; height: 270px;
+    border-radius: 70%;
+    margin: 22px auto 2px 7px;
+    padding: 5px;
+}
+
+#box7 {
+    background-image: url(img/o.jpg);
+    width: 230px; height: 230px;
+    border-radius: 70%;
+    margin:40px auto 1px 20px;
+    position: absolute;
+}
+#box8 {
+    background: #070707;
+    width: 120px; height: 120px;
+    border-radius: 70%;
+    margin: 56px;
+    text-align: center;
+    font-weight: bolder;
+    font-size: 24px;
+}
 #color-change{
      bottom: 50px;
      margin: 220px auto auto 41% ;
