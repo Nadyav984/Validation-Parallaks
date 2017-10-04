@@ -62,10 +62,10 @@
                     <div> Age:
                         <input type="text" name="age" id="age" size="20" title="Your age should includ only number" placeholder="Enter your age..."> </div>   
                     <div> Email:
-                        <input type="text" name="email" id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" placeholder="Enter your email"> </div>        
-                    <div> Date:
-                        <input type="text" name="date" id="date" placeholder="Enter date (dd/mm/yy)"> </div>            
-                    <div class="errors"></div>     
+                        <input type="text" name="email" id="email" placeholder="Enter your email"> </div>        
+                    <div> Birthday:
+                        <input type="date" name="date" id="date"> </div>            
+                      
                     <div>
                         <input type="submit" id="btn" value="Validate Me"></div>
                     </form>                    
@@ -138,7 +138,21 @@
         </div>
   </div>  
   <footer>
-
+    <div id="description">
+            <div id="dscrp-stop">
+                <code>event.stopPropagation()</code>
+                <p>Stops the ongoing transmission of the current event.
+                The stopPropagation() method, when invoked, must set 
+                the context object’s stop propagation flag.</p>
+            </div>
+            <div id="dscrp-prevent">
+                <code>event.preventDefault()</code>
+                <p>The preventDefault() method, when invoked, must set 
+                the canceled flag if the cancelable attribute value 
+                is true and the in passive listener flag is unset. </p>
+            </div>
+    
+    </div>
   </footer>
 </body>
 </html>
