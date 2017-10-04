@@ -1,40 +1,39 @@
 function validate(e){
     e.preventDefault();
-    let userName = document.getElementById("username").value;
-    console.log(userName);
-    let password = document.getElementById("password").value;
-    let userAge = document.getElementById("age").value;
-    let userEmail = document.getElementById("email").value;
-    let data = document.getElementById("date").value;
-    if(checkUser(userName)&&
-    checkPassword(password)&&
-    checkAge(userAge)&&
-    checkEmail(userEmail)&&
-    checkDate(data)){
+      let userName = document.getElementById("username").value;
+      let password = document.getElementById("password").value;
+    //console.log(password);
+      let age = document.getElementById("age").value;
+      let userEmail = document.getElementById("email").value;
+      let data = document.getElementById("date").value;
+        if(checkUser(userName)&&
+           checkPassword(password)&&
+           checkAge(age)&&
+           checkEmail(email)&&
+           checkDate(data)){
       alert(true);
     }else{
-     return false
+      return false
     }
 }
 
 window.onload = function() {
-  document.getElementById("registrationform").addEventListener("submit", validate);
-  document.getElementById("username").oninput = (e) => {
-    console.log(e);
+    document.getElementById("registrationform").addEventListener("submit", validate);
+    document.getElementById("username").oninput = (e) => {
     document.getElementById('username1').textContent = document.getElementById("username").value
   }
 }
 
 function checkUser(userName='') {
-  var re = /^user_(\w+)/g;
-  console.log(!!userName.match(re));
+    var re = /^user_(\w+)/g;
+ // console.log(!!userName.match(re));
     if (userName==="") {
       document.getElementById("username").style.border = "1px solid red";
       alert("You should enter a valid username starts with user_");
-        return false;
+          return false;
     } else if(userName.match(re)){
       document.getElementById("username").style.border = "1px solid black";
-       return true;
+         return true;
     } else {
         document.getElementById("username").style.border = "1px solid red";
       alert("You entered INVALID USER NAME: "+userName+". Enter a valid username without SPACES starts with user_ + your username ");
@@ -42,50 +41,46 @@ function checkUser(userName='') {
     }
 }
 
-function checkPassword(){
-  checkUserEntering=document.getElementById("password").value;
-  if (checkUserEntering==="") {
+function checkPassword(password){
+  var pass_regex=/^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+ //console.log(!!password.match(pass_regex));
+
+  if (password==="") {
     document.getElementById("password").style.border = "1px solid red";
-    alert("Pleas, enter your password");
-      return false; 
-  }
+    alert("You should enter a valid password");
+            return false;
+  }else if (password.match(pass_regex)){
+            return true;
+  }else{
+    document.getElementById("password").style.border = "1px solid red";
+    alert("You entered INVALID PASSWORD: "+password+". Enter a valid password:for min 8 letter password, with at least a symbol, upper and lower case letters and a number ");
+            return false;
 }
-function checkAge(){
-  checkAgeEntering=document.getElementById("age").value;
-  if (userAge.length === 0) {
-		alert("You must enter a age.");
-		return;
-    } else if (~checkAgeEntering.indexOf(" ")) {
-      document.getElementById("age").style.border = "3px solid red";
-         alert("You entered NOTHING");
-      return false;
-      } else if(parseInt(checkAgeEntering) >= 0) {
-        document.getElementById("age").style.border = "3px solid black";
-		return false;
-    }
-    else {
-        return true;
-    } 
+}
+function checkAge(age){
+  var age_regex=/^[1-9]?[0-9]{1}$|^100$/;
+//console.log("age");
+
+  if (age.match(age_regex)) {
+    document.getElementById("age").style.border = "1px solid black";
+		     return false;
+    } else  {
+      document.getElementById("age").style.border = "1px solid red";
+      alert("You should enter correct age");
+         return true;
+   }
   }
   
-function checkPassword(){
-  checkUserEntering=document.getElementById("password").value;
-  if (checkUserEntering==="") {
-    document.getElementById("password").style.border = "1px solid red";
-    alert("Pleas, enter your password");
-      return false;
-    }else{
-      return true;
-    }
-}
 
-function checkEmail(){
-  checkEmail=document.getElementById("email").value;
-    if(checkEmailEntering===""){
-      document.getElementById("password").style.border = "1px solid red";
-      alert("Enter your email");
+function checkEmail(email){
+  var email_regex =/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+  console.log("email");
+    if(!!email.match(email_regex)){
+      document.getElementById("email").style.border = "1px solid red";
+      alert("Check your entered email");
       return false;
     }else{
+      document.getElementById("email").style.border = "1px solid black";
       return true;
     }
 }
