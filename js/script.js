@@ -9,7 +9,7 @@ function validate(e){
         if(checkUser(userName)&&
            checkPassword(password)&&
            checkAge(age)&&
-           checkEmail(email)&&
+           checkEmail(userEmail)&&
            checkDate(data)){
       alert(true);
     }else{
@@ -43,79 +43,52 @@ function checkUser(userName='') {
 
 function checkPassword(password){
   var pass_regex=/^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
- //console.log(!!password.match(pass_regex));
 
-  if (password==="") {
-    document.getElementById("password").style.border = "1px solid red";
-    alert("You should enter a valid password");
-            return false;
-  }else if (password.match(pass_regex)){
-            return true;
-  }else{
-    document.getElementById("password").style.border = "1px solid red";
-    alert("You entered INVALID PASSWORD: "+password+". Enter a valid password:for min 8 letter password, with at least a symbol, upper and lower case letters and a number ");
-            return false;
-}
+    if (password==="") {
+      document.getElementById("password").style.border = "1px solid red";
+      alert("You should enter a valid password");
+              return false;
+    }else if (password.match(pass_regex)){
+              return true;
+    }else{
+      document.getElementById("password").style.border = "1px solid red";
+      alert("You entered INVALID PASSWORD: "+password+". Enter a valid password:for min 8 letter password, with at least a symbol, upper and lower case letters and a number ");
+              return false;
+  }
 }
 function checkAge(age){
   var age_regex=/^[1-9]?[0-9]{1}$|^100$/;
-//console.log("age");
 
   if (age.match(age_regex)) {
     document.getElementById("age").style.border = "1px solid black";
-		     return false;
+		     return true;
     } else  {
       document.getElementById("age").style.border = "1px solid red";
       alert("You should enter correct age");
-         return true;
+         return false;
    }
   }
   
 
 function checkEmail(email){
-  var email_regex =/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-  console.log("email");
-    if(!!email.match(email_regex)){
-      document.getElementById("email").style.border = "1px solid red";
+  var email_regex =/(\w+)@(\w+).(\w+)/;
+  console.log(email);
+  if(email.match(email_regex)){
+    document.getElementById("email").style.border = "1px solid black";
+          return true;
+
+    } else{
+    document.getElementById("email").style.border = "1px solid red";
       alert("Check your entered email");
-      return false;
-    }else{
-      document.getElementById("email").style.border = "1px solid black";
-      return true;
+          return false;
     }
 }
 
 function checkDate() {
-  checkDateEntering=document.getElementById("date").value;
-  submitOK = "true";
-     
-    currentDate = new Date();
-  dd = currentDate.getDate();
-  mm = currentDate.getMonth()+1; 
-  yyyy = currentDate.getFullYear();
-
-  if(dd<10){
-      dd='0'+dd;
-  } 
-  if(mm<10){
-      mm='0'+mm;
-  } 
-  currentDate= dd+'/'+mm+'/'+yyyy;
-
-  if (checkDateEntering==="") {
-    document.getElementById("date").style.border = "1px solid red";
-      alert("You entered NOTHING in Date placeholder. Enter a valid current date in format dd/mm/yyyy !");
-        return false;
-  }
-  else if(checkDateEntering===currentDate) {
-    document.getElementById("date").style.border = "1px solid #00ff00";
-    return false;
-  } else {
-    document.getElementById("date").style.border = "1px solid red";
-      alert("You entered INVALID CURRENT DATE: "+checkDateEntering+". Enter a valid current date in format dd/mm/yyyy without spaces!");
-        return false;
-  }
+  var x = document.getElementById("myDate").value;
+  document.getElementById("demo").innerHTML = x; 
 }
+
 
 
 /*--------------------------------------------------------------------------------------------------------*/

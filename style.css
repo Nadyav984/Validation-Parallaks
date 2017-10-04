@@ -62,7 +62,51 @@ font-size: 40px;
 color:#fff;
 text-shadow: 1px 1px 4px black, 0 0 0.5em #CA6E17;
 }
+/*------------------------------------------------------------------------------------------*/
 
+/*.form__field {
+  margin-bottom: 10px;
+}
+
+.form__error {
+  color: red;
+  text-align: left;
+  font-size: 12px;
+  display: block;
+  margin-top: 3px;
+  display: none;
+}
+
+.form input {
+  outline: none;
+  display: block;
+  width: 100%;
+  border-radius: 2px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.form button {
+  width: 100%;
+  padding: 10px;
+  border-radius: 2px;
+  border: 0;
+  background-color: #ccc;
+  color: #fff;
+}
+
+input:valid:not(:placeholder-shown) {
+  border-color: green;
+}
+
+input:invalid:not(:placeholder-shown) {
+  border-color: red;
+}
+input:invalid:not(:placeholder-shown) + .form__error {
+  display: block;
+}*/
+/*------------------------------------------------------------------------------------------*/
 input#btn{
   font-family: Gill Sans;
   font-size: 18px;
@@ -73,11 +117,11 @@ input#btn{
   color: white;
   text-shadow: 2px 2px 2px #000000, 0 0 1em #915803;
   padding: 5px 15px;
+  margin: 12px 10px 5px 138px;
 }
 .errors{
   border: 1px solid red;
   color: red;
-
 }
 form#registrationform{
   left: 0;
@@ -171,7 +215,11 @@ input[type="password"]{
   display: block;
   width: 370px;
 }
-
+input#date{
+  display: block;
+  width: 370px;
+  height: 15px;
+}
 td#Terms{
 text-align: right;
 position: block;
@@ -474,6 +522,7 @@ width:320px;
   text-align: center;
   font-weight: bolder;
   font-size: 24px;
+
 }
 #color-change{
    bottom: 50px;
@@ -488,7 +537,45 @@ width:320px;
 }
 /*-------------------------------------------------------------------------------------------------------*/
 footer{
-    height: 100px;
+    height: 250px;
     width: 100%;
     background: black;
 }
+#description{
+  color: #FFFFFF;
+  height: auto;
+  width: 90%;
+  padding-top: 20px;
+  font-size: 24px;
+  margin: 5px 35px;
+  
+}
+
+#dscrp-stop{
+  float: left;
+  width: 35%;
+  background-color: rgba(255, 255, 255, 0.76);
+    border: 1px solid white;
+    border-radius: 8px;
+    height: auto;
+    padding: 5px 25px;
+    color: black;
+    height: 150px;
+    margin: 40px;
+    margin-left: 80px;
+}
+#dscrp-prevent{
+  float: right;
+  width: 35%;
+  background-color: rgba(255, 255, 255, 0.76);
+  border: 1px solid white;
+  border-radius: 8px;
+  height: auto;
+  padding: 5px 25px;
+  color: black;
+  height: 150px;
+  margin: 40px;
+  }
+  code{
+    text-shadow: 1px 1px 4px black, 0 0 0.5em #CA6E17;
+  }
